@@ -4,7 +4,7 @@ use Illuminate\Support\Facades\Schema;
 use Illuminate\Database\Schema\Blueprint;
 use Illuminate\Database\Migrations\Migration;
 
-class CreateStatutesTable extends Migration
+class CreateTitlesTable extends Migration
 {
     /**
      * Run the migrations.
@@ -13,14 +13,11 @@ class CreateStatutesTable extends Migration
      */
     public function up()
     {
-        Schema::create('statutes', function (Blueprint $table) {
+        Schema::create('titles', function (Blueprint $table) {
             $table->increments('id');
-            $table->integer('title_id');
-            $table->string('statute_number');
-            $table->boolean('repealed');
-            $table->string('statue_text');
+            $table->integer('division_id');
+            $table->string('title_name');
             $table->timestamps();
-
         });
     }
 
@@ -31,6 +28,6 @@ class CreateStatutesTable extends Migration
      */
     public function down()
     {
-        Schema::dropIfExists('statutes');
+        Schema::dropIfExists('titles');
     }
 }
