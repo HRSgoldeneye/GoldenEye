@@ -15,20 +15,35 @@
      function getJson() {
         $jsonFile = file_get_contents('resources/hrscurrent.json');
         $php_object = json_decode($jsonFile);
-        foreach($php_object as $object) {
-            foreach( )
+        //print_r($php_object[0]);
+         //DB::table('divisions')
+        foreach($php_object as $divisionObject) {
+             $divId = DB::table('divisions')->insertGetId(
+            ['division_name' => $divisionObject->name]
+             );
+            foreach($divisionObject as $titleObject) {
+                $titleId = DB::table('titles')->insertGetId(
+                    ['division_id' => $divId, 'title_name' => $titleObject->name]
+                );
+                foreach($titleObject as $chapterObject) {
+                    $statuteId = DB::table('statutes')->insertGetId(
+                        ['title_id' => $titleId,
+                            'statute_number' => $chapterObject->number,
+                            'repealed' => $chapterObject->repealed,
+                            'statute_text' => $chapterObject->text]
+                    );
+                    foreach($chapterObject as $sectionObject){
+                        DB::table('sections')->insert(
+                            ['statute_id' => $statuteId,
+                                'section_name' => $sectionObject->name,
+                                'section_number' => $sectionObject->number,
+                                'text' => $sectionObject->text]
+                        );
+                    }
+                }
+            }
         }
-        echo $php_object;
-        //$jsonFile = file_get_contents('hrscurrent.json', true, true);
-//
-//        $php_object2 = json_decode($jsonFile, true);
-//        return $php_object;
-//        var_dump($php_object);
-//       return print_r($php_object, true);
-
-        //var_dump($php_object2);
-    //        foreach($object as $php_object) {
-    //            persistObject($object);
-    //        }
+        # should insert everything in the database?
+        # return true;
     }
 ?>
