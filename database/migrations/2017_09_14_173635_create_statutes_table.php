@@ -18,7 +18,7 @@ class CreateStatutesTable extends Migration
             $table->integer('title_id');
             $table->string('statute_number');
             $table->boolean('repealed');
-            $table->string('statue_text');
+            $table->string('statute_text');
             $table->timestamps();
 
         });

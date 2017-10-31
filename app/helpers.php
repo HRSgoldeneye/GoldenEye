@@ -12,7 +12,7 @@
 
     }
 
-     function getJson() {
+     function () {
         $jsonFile = file_get_contents('resources/hrscurrent.json');
         $php_object = json_decode($jsonFile);
         //print_r($php_object[0]);
@@ -43,7 +43,7 @@
                 }
             }
         }
-        # should insert everything in the database?
-        # return true;
+        // should insert everything in the database?
+        // return true;
     }
 ?>
