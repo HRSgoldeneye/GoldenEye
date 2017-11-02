@@ -10,10 +10,12 @@
 | contains the "web" middleware group. Now create something great!
 |
 */
-
-Route::get('/', function () {
-    return view('pages.index');
+Route::prefix('elasticearch')->group(function () {
+    Route::get('test', ['uses' => 'ClientController@elasticearchTest']);
 });
+//Route::get('/', function () {
+//    return view('pages.index');
+//});
 
 Route::get('/about', function () {
     return view('pages.about');
@@ -21,3 +23,4 @@ Route::get('/about', function () {
 
 Route::get('/statute', 'StatutesController@index');
 Route::get('/statute/{statute}', 'StatutesController@show');
+
