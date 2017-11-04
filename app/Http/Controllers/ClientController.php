@@ -29,7 +29,7 @@ class ClientController extends Controller
 
         echo "\n\nRetrieve a Document:\n";
         $params = [
-            
+            //My dick
         ];
     }
     //
