@@ -13,5 +13,4 @@
 ------
     Home Page Stuff Here
     -------
-<p> {{ getJson()}}</p>
 @endsection

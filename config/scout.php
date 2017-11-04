@@ -15,7 +15,7 @@ return [
     |
     */
 
-    'driver' => env('SCOUT_DRIVER', 'algolia'),
+    'driver' => env('SCOUT_DRIVER', 'elasticsearch'),
 
     /*
     |--------------------------------------------------------------------------
@@ -74,5 +74,23 @@ return [
         'id' => env('ALGOLIA_APP_ID', ''),
         'secret' => env('ALGOLIA_SECRET', ''),
     ],
+
+    /*
+    |--------------------------------------------------------------------------
+    | ElasticSearch Configuration
+    |--------------------------------------------------------------------------
+    |
+    | Here you may configure your ElasticSearch settings. ElasticSearch is a distributed,
+    | open source search and analytics engine. Feel free to add as many ElasticSearch servers
+    | as required by your app
+    |
+    */
+
+    'elasticsearch' => [
+        'index' => env('ELASTICSEARCH_INDEX', 'laws'),
+        'hosts' => [
+            env('ELASTICSEARCH_HOST', 'http://localhost')
+        ]
+    ]
 
 ];
