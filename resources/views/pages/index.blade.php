@@ -10,6 +10,27 @@
 </div>
 
 @section ('content')
+    {{$query = ''}}
+    {{Form::open(['method' => 'get', 'route' => 'pages.index']) }}
+    {{Form::text('query', $query) }}
+    {{Form::submit('search')}}
+    {{Form::close()}}
+    @if(isset($results))
+        <table>
+            <tr>
+                <th>section</th>
+                <th>section number</th>
+                <th>text</th>
+            </tr>
+            @foreach($results as $result)
+                <tr>
+                <td>{{$result->section_name}}</td>
+                <td>{{$result->section_number}}</td>
+                <td>{{$result->text}}</td>
+                </tr>
+            @endforeach
+        </table>
+        @endif
 ------
     Home Page Stuff Here
     -------

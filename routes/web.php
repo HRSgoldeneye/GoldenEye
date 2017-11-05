@@ -24,3 +24,7 @@ Route::get('/about', function () {
 Route::get('/statute', 'StatutesController@index');
 Route::get('/statute/{statute}', 'StatutesController@show');
 
+Route::prefix('section')->group(function (){
+   Route::get('search', ['uses' => 'SectionController@search', 'as' => 'pages.index']);
+});
+

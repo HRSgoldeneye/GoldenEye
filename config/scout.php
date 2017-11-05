@@ -87,7 +87,7 @@ return [
     */
 
     'elasticsearch' => [
-        'index' => env('ELASTICSEARCH_INDEX', 'laws'),
+        'index' => env('ELASTICSEARCH_INDEX', 'hawaii-statutes'),
         'hosts' => [
             env('ELASTICSEARCH_HOST', 'http://localhost')
         ]
