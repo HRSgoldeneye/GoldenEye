@@ -13,5 +13,14 @@ class Statute extends Model
     public function title() {
         return $this->belongTo(Title::class);
     }
+
+    public function isRepealed() {
+        if($this->repealed()) {
+            return ('REPEALED');
+        }
+        else {
+            return ('');
+        }
+    }
     //
 }
