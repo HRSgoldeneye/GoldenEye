@@ -24,9 +24,15 @@
             </tr>
             @foreach($results as $result)
                 <tr>
-                <td>{{$result->section_name}}</td>
+                <td>
+                    {{$result->section_name}}
+
+                </td>
                 <td>{{$result->section_number}}</td>
-                <td>{{$result->text}}</td>
+                <td>
+                    <a href="/statute/{{$result->statute_id}}">{{$result->text}}
+                    </a>
+                </td>
                 </tr>
             @endforeach
         </table>
