@@ -16,26 +16,37 @@
     {{Form::submit('search')}}
     {{Form::close()}}
     @if(isset($results))
-        <table>
-            <tr>
-                <th>section</th>
-                <th>section number</th>
-                <th>text</th>
-            </tr>
+        <div class="row">
+
+
+                <div class="col-3">Section</div>
+            <div class="col-3">Section Number</div>
+            <div class="col-6">Text</div>
+
+        </div>
+        <hr>
             @foreach($results as $result)
-                <tr>
-                <td>
+                {{--{{$statute = $result->statute()->get()->first()}}--}}
+
+                {{--{{$statuteNumber = $statuteNumber->statute_number}}--}}
+                <div class="row">
+                    <div class="col-3">
                     {{$result->section_name}}
 
-                </td>
-                <td>{{$result->section_number}}</td>
-                <td>
+                    </div>
+                    <div class="col-3">
+                HRS {{$result->statute()->get()->first()->statute_number}}-{{$result->section_number}}
+                    </div>
+                    <div class="col-6">
                     <a href="/statute/{{$result->statute_id}}">{{$result->text}}
                     </a>
-                </td>
-                </tr>
+                    </div>
+                </div>
+                <hr>
             @endforeach
-        </table>
+
+
+
         @endif
 ------
     Home Page Stuff Here
