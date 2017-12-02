@@ -26,8 +26,9 @@
                                     <a class="collapsed" data-toggle="collapse" data-parent="#accordion"
                                        href="#collapse{{$loop->index}}" aria-expanded="false"
                                        aria-controls="collapse{{$loop->index}}">
-                                        {{$section->section_name}}
                                         {{$statute->statute_number}}-{{$section->section_number}}
+                                        {{$section->section_name}}
+
                                     </a>
                                 </h5>
                             </div>
