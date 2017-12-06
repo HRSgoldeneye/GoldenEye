@@ -19,9 +19,8 @@
         <div class="row">
 
 
-                <div class="col-3">Section</div>
-            <div class="col-3">Section Number</div>
-            <div class="col-6">Text</div>
+                <div class="col-6">Section</div>
+            <div class="col-6">Section Number</div>
 
         </div>
         <hr>
@@ -30,16 +29,12 @@
 
                 {{--{{$statuteNumber = $statuteNumber->statute_number}}--}}
                 <div class="row">
-                    <div class="col-3">
+                    <div class="col-6">
                     {{$result->section_name}}
 
                     </div>
-                    <div class="col-3">
-                HRS {{$result->statute()->get()->first()->statute_number}}-{{$result->section_number}}
-                    </div>
                     <div class="col-6">
-                    <a href="/statute/{{$result->statute_id}}">{{$result->text}}
-                    </a>
+                        <a href="/statute/{{$result->statute_id}}"> HRS {{$result->statute()->get()->first()->statute_number}}-{{$result->section_number}}</a>
                     </div>
                 </div>
                 <hr>
