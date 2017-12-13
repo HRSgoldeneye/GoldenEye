@@ -13,5 +13,8 @@
                     About <span class="sr-only">(current)</span></a>
             </li>
         </ul>
+       <button >login</button>
     </div>
+    <script type="text/javascript" src="//s7.addthis.com/js/300/addthis_widget.js#pubid=ra-59bfae9b4408819f">        
+    </script>
 </nav>
